@@ -4,9 +4,9 @@ use mini_redis::{client, Result};
 async fn main() -> Result<()> {
     let mut client = client::connect("127.0.0.1:6379").await?;
 
-    client.set("fuck leonardo lixo ruim podre", "e o thalison também".into()).await?;
+    client.set("this is a key", "this is a value".into()).await?;
 
-    let result = client.get("fuck leonardo lixo ruim podre").await?;
+    let result = client.get("this is a key").await?;
 
     println!("got value from the server; result={:?}", result);
 
